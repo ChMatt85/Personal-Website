@@ -1,36 +1,13 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
 const pageTitle = "About Me";
-
-const identity = {
-  firstName: "John Doe",
-  country: "USA",
-  occupation: "Software Developer",
-  hobbies: ["hiking", "photography", "gaming"]
-}
-
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "Astro"
-];
-
-const happy = true;
-const finished = false;
-const goal = 3;
 ---
-
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
 
 <html lang="en">
   <head>
+    <Header />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
@@ -43,22 +20,16 @@ const goal = 3;
   </body>
 </html>
 
-
-<p>Here are a few facts about me:</p>
-<ul>
-  <li>My name is {identity.firstName}.</li>
-  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-  {identity.hobbies.length >= 2 &&
-    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
   }
-</ul>
-<p>My skills are:</p>
-<ul>
-  {skills.map((skill) => <li>{skill}</li>)}
-</ul>
-{happy && <p>I am happy to be learning Astro!</p>}
-
-{finished && <p>I finished this tutorial!</p>}
-
-{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = 'Home Page';
@@ -14,8 +14,23 @@ const pageTitle = 'Home Page';
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
     <h1>{pageTitle}</h1>
     <Footer />
   </body>
 </html>
+
+<style>
+  body {
+    margin-top: auto;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+</style>
